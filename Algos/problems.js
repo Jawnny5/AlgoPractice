@@ -18,6 +18,17 @@ function uniqueString(string){
   return true
 }
 
+
+function permutation(mainString, subString){
+
+}
+
+function palindrome(stringOne, stringTwo){
+  
+}
+
+
+
 module.exports = {
   uniqueString, permutation
 }
@@ -30,7 +41,4 @@ module.exports = {
 //ALGORITHM NUMBER TWO
 //Implement an algorithm that evaluates two strings to see if one is a permutation(able to be derived from) of the other
 
-function permutation(mainString, subString){
-
-}
 

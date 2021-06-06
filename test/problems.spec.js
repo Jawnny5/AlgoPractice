@@ -13,3 +13,7 @@ it('validates a string for all unique characters', () => {
 it('checks if a string is a permutation of another', () => {
   assert.equal(permutation(('awesome', 'woes'), true))
 })
+
+it('checks if a string is a palindrome', () => {
+  assert.equal(uniqueString('abba'), true)
+})

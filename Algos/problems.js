@@ -32,7 +32,23 @@ function permutation(mainString, subString){
       listOfCharacters.set(string.charAt(i), 1);
     }
   }
+  var foundAnOdd = false;
+  
+  for (var [key, value] of listOfCharacters) {
+    if (value % 2 !== 0) {
+      if (!foundAnOdd) {
+        // We've found our 1 allowed odd value
+        foundAnOdd = true;
+      } else {
+        // More than 1 odd!
+        return false;
+      }
+    }
+  }
+  // We've looked at all characters in our map object and have found 1 or less odd character counts
+  return true;
 }
+  
 
 function palindrome(stringOne, stringTwo){
   

@@ -54,10 +54,14 @@ function palindrome(stringOne, stringTwo){
   
 }
 
+function urlify(string){
+
+}
+
 
 
 module.exports = {
-  uniqueString, permutation
+  uniqueString, permutation, urlify
 }
 
 //currently this algorithm passes the Mocha test written, however, how would I go about prohibiting non-string data types from being accepted as valid parameters???

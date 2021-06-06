@@ -5,7 +5,7 @@ const assert = require('assert')
 //UNIT TEST FOR UNIQUESTRING FUNCTION
 
 it('validates a string for all unique characters', () => {
-  assert.equal(uniqueString('paint'), true)
+  assert.equal(uniqueString('cat'), true)
 })
 
 //UNIT TEST FOR PERMUTATION FUNCTION

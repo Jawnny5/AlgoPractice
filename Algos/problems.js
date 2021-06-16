@@ -19,49 +19,36 @@ function uniqueString(string){
 }
 
 
-function permutation(mainString, subString){
-  var listOfCharacters = new Map();
-  
-  for (var i = 0; i < string.length; i++) {
-    
-    if (listOfCharacters.has(string.charAt(i))) {
-      // Get number of letters, pre-increment, then set new value
-      var numOfOccurances = listOfCharacters.get(string.charAt(i));
-      listOfCharacters.set(string.charAt(i), ++numOfOccurances);
-    } else {
-      listOfCharacters.set(string.charAt(i), 1);
-    }
+function permutation(str1, str2){
+   // if different lengths, return false
+   if (str1.length !== str2.length) {
+    return false;
+  // else sort and compare 
+  // (doesnt matter how it's sorted, as long as it's sorted the same way)
+  } else {
+    var sortedStringOne = str1.split('').sort().join('');
+    var sortedStringTwo = str2.split('').sort().join('');
+    return sortedStringOne === sortedStringTwo;
   }
-  var foundAnOdd = false;
-  
-  for (var [key, value] of listOfCharacters) {
-    if (value % 2 !== 0) {
-      if (!foundAnOdd) {
-        // We've found our 1 allowed odd value
-        foundAnOdd = true;
-      } else {
-        // More than 1 odd!
-        return false;
-      }
-    }
-  }
-  // We've looked at all characters in our map object and have found 1 or less odd character counts
-  return true;
 }
   
 
-function palindrome(stringOne, stringTwo){
-  
+function palindrome(str){
+
+  let reg = /[\W_]/ //regular expression for nonalphanumeric characters
+  let lowerCaseStr = str.toLowerCase().replace(reg, '')
+  let reversedStr = str.split().reverse().join()
+
+  if(reversedStr === lowerCaseStr){
+    return true
+  } else return false 
 }
 
-function urlify(string){
-
-}
 
 
 
 module.exports = {
-  uniqueString, permutation, urlify
+  uniqueString, permutation, palindrome
 }
 
 //currently this algorithm passes the Mocha test written, however, how would I go about prohibiting non-string data types from being accepted as valid parameters???

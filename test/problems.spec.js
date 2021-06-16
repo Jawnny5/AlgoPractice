@@ -19,3 +19,8 @@ it('checks if a string is a permutation of another', () => {
 it('checks if a string is a palindrome', () => {
   assert.equal(palindrome('abba'), true)
 })
+
+//UNIT TEST FOR URLIFY FUNCTION
+it("converts white space in a given string's true length to %20", () => {
+  assert.equal(urlify('Mr John Smith', 13), 'Mr%20John%20Smith')
+})

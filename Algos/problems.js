@@ -18,7 +18,11 @@ function uniqueString(string){
   return true
 }
 
+//currently this algorithm passes the Mocha test written, however, how would I go about prohibiting non-string data types from being accepted as valid parameters???
 
+//Walkthrough of algorithmic logic above: The javascript function above takes in a string. We initialize two index variables, i & j. We then perform two for loops to go over the string that is passed. We evaluate through an if statement whether the value of both index i and index j are equal and if so, we allow the loop to continue. 
+
+// ALGORITHM TWO: Implement logic that checks two strings to see if one is a permutation of the other
 function permutation(str1, str2){
    // if different lengths, return false
    if (str1.length !== str2.length) {
@@ -32,7 +36,7 @@ function permutation(str1, str2){
   }
 }
   
-
+//ALGORITHM THREE: Check a given string to see if it is a palindrome
 function palindrome(str){
 
   let reg = /[\W_]/ //regular expression for nonalphanumeric characters
@@ -51,9 +55,7 @@ module.exports = {
   uniqueString, permutation, palindrome
 }
 
-//currently this algorithm passes the Mocha test written, however, how would I go about prohibiting non-string data types from being accepted as valid parameters???
 
-//Walkthrough of algorithmic logic above: The javascript function above takes in a string. We initialize two index variables, i & j. We then perform two for loops to go over the string that is passed. We evaluate through an if statement whether the value of both index i and index j are equal and if so, we allow the loop to continue. 
 
 
 //ALGORITHM NUMBER TWO

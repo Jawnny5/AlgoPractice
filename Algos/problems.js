@@ -48,11 +48,42 @@ function palindrome(str){
   } else return false 
 }
 
+function urlify(s, n){
+  let out = '';
+  let chars = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    let c = s[i];
+    if (c !== ' ') {
+      chars++;
+    }
+  }
+
+  let spaces = n - chars;
+
+  for (let i = 0; i < s.length; i++) {
+    let c = s[i];
+    if (c === ' ' && spaces > 0) {
+      out += '%20';
+      spaces--;
+    } else if (c !== ' ') {
+      out += c;
+    }
+  }
+  //if n is not yet reached and there are still spaces left
+  while (spaces > 0) {
+    out += '%20';
+    spaces--;
+  }
+
+  return out;
+}
+
 
 
 
 module.exports = {
-  uniqueString, permutation, palindrome
+  uniqueString, permutation, palindrome, urlify
 }
 
 

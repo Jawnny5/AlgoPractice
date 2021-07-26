@@ -19,7 +19,6 @@ function uniqueString(string){
 }
 
 //currently this algorithm passes the Mocha test written, however, how would I go about prohibiting non-string data types from being accepted as valid parameters???
-
 //Walkthrough of algorithmic logic above: The javascript function above takes in a string. We initialize two index variables, i & j. We then perform two for loops to go over the string that is passed. We evaluate through an if statement whether the value of both index i and index j are equal and if so, we allow the loop to continue. 
 
 // ALGORITHM TWO: Implement logic that checks two strings to see if one is a permutation of the other
@@ -48,6 +47,7 @@ function palindrome(str){
   } else return false 
 }
 
+//ALGORITHM NUMBER FOUR: Write a function that replaces all "spaces" in a string with %20 like a URL
 function urlify(s, n){
   let out = '';
   let chars = 0;
@@ -79,17 +79,29 @@ function urlify(s, n){
   return out;
 }
 
+//ALGORITHM FIVE Given an Array find the subarray that returns the largest sum
+//For example given let array = [1, -1, 5, 3, -7, 4, 5, 6, -100, 4]
+//Output should be [5, 3, -7, 4, 5, 6]
 
+function largestSubArray(array){
+  let maxSoFar = array[0]
+  let maxEndingHere = array[0]
 
-
-module.exports = {
-  uniqueString, permutation, palindrome, urlify
+  for (let i = 1; i < array.length; i++){
+    maxEndingHere = Math.max(maxEndingHere + array[i], array[i])
+    maxSoFar = Math.max(maxSoFar, maxEndingHere)
+  }
+  return maxSoFar
 }
 
 
 
 
-//ALGORITHM NUMBER TWO
-//Implement an algorithm that evaluates two strings to see if one is a permutation(able to be derived from) of the other
+module.exports = {
+  uniqueString, permutation, palindrome, urlify, largestSubArray
+}
+
+
+
 
 

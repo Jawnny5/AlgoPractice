@@ -94,11 +94,34 @@ function largestSubArray(array){
   return maxSoFar
 }
 
+//ALGORITHM SIX. Given a string, implement an algorithm that compresses the string by
+//returning the charaacter and the character count. If there letter has a count of one
+//do not return the count, only the character
+function compression(str){
+  let compressed = ''
+  let splitStr = str.split('')
+  for(let i = 0; i < splitStr.length; i++){
+    let charCount = 1
+    let current = splitStr[i]
+    while(i < splitStr.length - 1 && current === splitStr[i + 1]){
+      charCount++
+      i++
+    }
+    if(charCount == 1){
+      compressed += current
+    } else {
+      compressed += current + charCount
+    }
+  }
+  return compressed
+}
+
 
 
 
 module.exports = {
-  uniqueString, permutation, palindrome, urlify, largestSubArray
+  uniqueString, permutation, palindrome, urlify, largestSubArray,
+  compression
 }
 
 
